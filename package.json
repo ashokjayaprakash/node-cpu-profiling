@@ -1,0 +1,23 @@
+{
+  "name": "cpu-profiling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pm2": "pm2 start index.js --name \"cpu-profile\"",
+    "start": "node --prof index.js",
+    "lt:non:recursive": "autocannon -c 2 -a 50 \"http://localhost:3000/fibonacci/20\"",
+	  "lt:recursive": "autocannon -c 1 -a 5000 \"http://localhost:3000/recursiveFibonacci/20\"",
+    "v8-json": "node --prof-process --preprocess -j isolate-0x3196f00-v8.log > isolate-000001E580572580-v8.json",
+    "v8-text": "node --prof-process isolate-0x3196f00-v8.log > processed.txt",
+    "flamebearer": "flamebearer isolate-000001E580572580-v8.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autocannon": "^3.2.0",
+    "express": "^4.16.4",
+    "flamebearer": "^1.1.3"    
+  }
+}
