@@ -1,7 +1,7 @@
 {
-  "name": "cpu-profiling",
+  "name": "node-cpu-profiling",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proof of concept to cpu profile the node js REST API.",
   "main": "index.js",
   "scripts": {
     "pm2": "pm2 start index.js --name \"cpu-profile\"",
@@ -12,8 +12,8 @@
     "v8-text": "node --prof-process isolate-0x3196f00-v8.log > processed.txt",
     "flamebearer": "flamebearer isolate-000001E580572580-v8.json"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node", "cpu-profiling", "flame-graph"],
+  "author": "Ashok JayaPrakash <ashokjp93@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "autocannon": "^3.2.0",
